@@ -235,5 +235,6 @@ int main() {
     atividade10();
     return 0;
 }
-
+ //clang nomedoarquivo.c -o out
+ // ./out 
 
