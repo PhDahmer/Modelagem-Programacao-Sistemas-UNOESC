@@ -10,8 +10,8 @@ Este repositório é dividido por aulas, com uma pasta para cada conjunto de ati
 
 ### ✅ Aulas
 
-- `aula1/` – Lista de execício I 
-- `aula2/`- Lista de exercício II em **JAVA**
+- `aula 1/` – Lista de execício I 
+- `aula 2/`- Lista de exercício II em **JAVA**
 
 ---
 

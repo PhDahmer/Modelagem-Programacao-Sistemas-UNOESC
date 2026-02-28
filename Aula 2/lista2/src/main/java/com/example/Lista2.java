@@ -67,8 +67,28 @@ public class Lista2 {
         }
     }
 
+    public static void atividade7() { 
+        Scanner scan = new Scanner(System.in);
+        int escolha;
+
+        System.out.println("=-=-=-=-=-= Banco Ph Banking =-=-=-=-=-=");
+        System.out.println("Opção 1: Saque");
+        System.out.println("Opção 2: Depósito");
+        System.out.println("Opção 3: Saldo");
+        System.out.println("Opção 4: Sair");
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+        System.out.print("\nDigite a opção desejada: ");
+        escolha = scan.nextInt();
+
+        while (escolha < 1 || escolha > 4) {
+            System.out.print("Numero invalido, digite um numero de 1 a 4: ");
+            escolha = scan.nextInt();
+        }
+        
+        // fazer um switch case, para cada opção e apenas digitar algo na tela, nao fazer atividade de banco em si
+    }
     
     public static void main(String[] args) {
-        atividade6();
-        }
+        atividade7();
     }
+}
