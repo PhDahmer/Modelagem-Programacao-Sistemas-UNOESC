@@ -12,7 +12,8 @@ Este repositório é dividido por aulas, com uma pasta para cada conjunto de ati
 
 - `aula 1/` – Lista de execício I 
 - `aula 2/`- Lista de exercício II em **JAVA**
-
+- `aula 4/`- POO Abstração em **JAVA**
+- `aula 6/`- POO Herança em **JAVA**
 ---
 
 ## 🛠️ Ferramentas utilizadas
