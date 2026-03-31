@@ -15,7 +15,7 @@ public class IngressoVIP extends Ingresso {
 
     // construtor
     public IngressoVIP (float pPreco, float pValorAdicional) {
-        super(pPreco);
+        super.setPreco(pPreco);
         this.valorAdicional = pValorAdicional;
     }
 
@@ -26,6 +26,7 @@ public class IngressoVIP extends Ingresso {
     // métodos
     @Override
     public String toString() {
-        return "Valor do ingresso VIP: " + (super.getPreco() + this.valorAdicional);
+        float valorTotal = super.getPreco() + this.valorAdicional;
+        return "Valor do ingresso VIP: " + valorTotal;
     }
 }
