@@ -33,6 +33,7 @@ public class Funcionario {
     
     public void exibirDados() {
         System.out.println("Nome: " + this.nome);
+        salario.calcularTudo();
         salario.exibeSalario();
     }
 

@@ -12,7 +12,6 @@ public class Main {
 
         System.out.println("=-=-=-=-=-=-= Salarios dos pobres =-=-=-=-=-=-=");
         for(Funcionario funcionario : funcionarios) {
-            funcionario.getSalario().calcularTudo();
             System.out.println("");
             funcionario.exibirDados();
         }
