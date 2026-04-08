@@ -1,24 +1,24 @@
 package com.aula8;
 
 public class Circulo implements Geometria {
-    private float raio;
-    private float area;
+    private double raio;
+    private double area;
 
     //setters
 
-        public void setRaio(float raio) {
+        public void setRaio(double raio) {
             this.raio = raio;
         }
 
     //getters
 
-        public float getRaio() {
+        public double getRaio() {
             return raio;
         }
 
     //construtor
 
-    public Circulo(float raio) {
+    public Circulo(double raio) {
         this.raio = raio;
     }
 
@@ -26,8 +26,8 @@ public class Circulo implements Geometria {
     }
 
     @Override
-    public float calcularArea() {
-        this.area = pi * raio * raio;
+    public double calcularArea() {
+        this.area = PI * Math.pow(raio, 2);
         return area;
     }
 

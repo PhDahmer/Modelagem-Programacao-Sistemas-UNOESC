@@ -15,6 +15,7 @@ Este repositório é dividido por aulas, com uma pasta para cada conjunto de ati
 - `aula 4/`- POO Abstração em **JAVA**
 - `aula 6/`- POO Herança em **JAVA**
 - `aula 7/`- POO Herança, Aula prática **JAVA**
+- `aula 8/`- POO Polimorfismo, Aula prática **JAVA**
 ---
 
 ## 🛠️ Ferramentas utilizadas

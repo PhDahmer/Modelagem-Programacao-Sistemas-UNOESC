@@ -1,7 +1,7 @@
 package com.aula8;
 
 public interface Geometria {
-    float pi = 3.14159f;
+     final static float PI = 3.14159f;
 
-    public float calcularArea();
+    public double calcularArea();
 }

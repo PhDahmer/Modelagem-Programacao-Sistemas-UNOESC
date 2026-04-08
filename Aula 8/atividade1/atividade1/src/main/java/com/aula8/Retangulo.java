@@ -1,33 +1,33 @@
 package com.aula8;
 
 public class Retangulo implements Geometria {
-    private float base;
-    private float altura;
-    private float area;
+    private double base;
+    private double altura;
+    private double area;
 
     //setters
 
-        public void setBase(float base) {
+        public void setBase(double base) {
             this.base = base;
         }
 
-        public void setAltura(float altura) {
+        public void setAltura(double altura) {
             this.altura = altura;
         }
 
     //getters
 
-        public float getBase() {
+        public double getBase() {
             return base;
         }
 
-        public float getAltura() {
+        public double getAltura() {
             return altura;
         }
 
     //construtor
 
-    public Retangulo(float base, float altura) {
+    public Retangulo(double base, double altura) {
         this.base = base;
         this.altura = altura;
     }
@@ -36,9 +36,9 @@ public class Retangulo implements Geometria {
     }
     
     @Override
-    public float calcularArea() {
+    public double calcularArea() {
         this.area = base * altura;
-        return area;
+        return this.area;
     }
 
 }

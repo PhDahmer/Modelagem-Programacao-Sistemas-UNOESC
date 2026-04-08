@@ -1,27 +1,27 @@
 package com.aula8;
 
 public class Quadrado implements Geometria {
-    private float lado;
-    private float area;
+    private double lado;
+    private double area;
 
     //setters
 
-        public void setBase(float base) {
-            this.lado = base;
+        public void setLado(double lado) {
+            this.lado = lado;
         }
 
 
 
     //getters
 
-        public float getBase() {
+        public double getLado() {
             return lado;
         }
 
 
     //construtor
 
-    public Quadrado(float lado) {
+    public Quadrado(double lado) {
         this.lado = lado;
     }
 
@@ -29,7 +29,7 @@ public class Quadrado implements Geometria {
     }
 
     @Override
-    public float calcularArea() {
+    public double calcularArea() {
         this.area = lado * lado;
         return area;
     }
