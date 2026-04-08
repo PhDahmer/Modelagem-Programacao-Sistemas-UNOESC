@@ -1,5 +1,7 @@
 package com.aula8;
 
+import java.util.Scanner;
+
 public class Circulo implements Geometria {
     private double raio;
     private double area;
@@ -13,7 +15,7 @@ public class Circulo implements Geometria {
     //getters
 
         public double getRaio() {
-            return raio;
+            return this.raio;
         }
 
     //construtor
@@ -27,8 +29,13 @@ public class Circulo implements Geometria {
 
     @Override
     public double calcularArea() {
-        this.area = PI * Math.pow(raio, 2);
-        return area;
+        this.area = PI * Math.pow(this.raio, 2);
+        return this.area;
+    }
+
+    public void lerDados(Scanner sc) {
+        System.out.print("\nDigite o raio do círculo: ");
+        this.raio = sc.nextDouble();
     }
 
 }

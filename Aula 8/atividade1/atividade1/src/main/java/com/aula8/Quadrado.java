@@ -1,5 +1,7 @@
 package com.aula8;
 
+import java.util.Scanner;
+
 public class Quadrado implements Geometria {
     private double lado;
     private double area;
@@ -15,7 +17,7 @@ public class Quadrado implements Geometria {
     //getters
 
         public double getLado() {
-            return lado;
+            return this.lado;
         }
 
 
@@ -31,6 +33,12 @@ public class Quadrado implements Geometria {
     @Override
     public double calcularArea() {
         this.area = lado * lado;
-        return area;
+        return this.area;
     }
+
+    public void lerDados(Scanner sc) {
+        System.out.print("\nDigite o lado do quadrado: ");
+        this.lado = sc.nextDouble();
+    }
+    
 }

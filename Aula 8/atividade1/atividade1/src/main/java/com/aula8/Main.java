@@ -18,25 +18,15 @@ public class Main {
 
         switch (opcao) {
             case 1:
-                
-                System.out.print("\nDigite a base do retângulo: ");
-                double base = sc.nextDouble();
-                System.out.print("Digite a altura do retângulo: ");
-                double altura = sc.nextDouble();
-                geometria = new Retangulo(base, altura); 
+                geometria = new Retangulo(); 
                 break;
 
             case 2:
-                
-                System.out.print("\nDigite o lado do quadrado: ");
-                double lado = sc.nextDouble();
-                geometria = new Quadrado(lado);
+                geometria = new Quadrado();
                 break;
 
             case 3:
-                System.out.print("\nDigite o raio do círculo: ");
-                double raio = sc.nextDouble();
-                
+                geometria = new Circulo();
                 break;
 
             default:
@@ -44,6 +34,7 @@ public class Main {
         }
 
         if (geometria != null) {
+            geometria.lerDados(sc);
             System.out.println("\nA área do formato geométrico é: " + geometria.calcularArea());
         }
 
