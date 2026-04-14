@@ -6,6 +6,7 @@ public class Quadrado implements Geometria {
     private double lado;
     private double area;
 
+
     //setters
 
         public void setLado(double lado) {
