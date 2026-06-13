@@ -36,8 +36,9 @@ public class DispostivoInteligente {
         this.modelo = modelo;
         this.tipo = tipo;
         this.ligado = ligado;
-        this.consumoAtual = consumoAtual;
+        this.setConsumoAtual(consumoAtual);
         this.consumoMensal = consumoMensal;
+
     }
 
     public DispostivoInteligente() {
@@ -57,7 +58,20 @@ public class DispostivoInteligente {
         public boolean isLigado() { return this.ligado; }
         public void setLigado(boolean ligado) { this.ligado = ligado; }
         public double getConsumoAtual() { return this.consumoAtual; }
-        public void setConsumoAtual(double consumoAtual) { this.consumoAtual = consumoAtual; }
+        
+        // Adicionando validação para consumo negativo (Try / Catch)
+        public void setConsumoAtual(double consumoAtual) {
+            try {
+                if (consumoAtual < 0) {
+                    throw new IllegalArgumentException("Consumo não pode ser negativo: " + consumoAtual);
+                }
+                this.consumoAtual = consumoAtual;
+            }  catch (IllegalArgumentException e) {
+                System.out.println("Erro ao definir consumo: " + e.getMessage());
+                this.consumoAtual = 0;
+            }
+        }   
+
         public double getConsumoMensal() { return this.consumoMensal; }
         public void setConsumoMensal(double consumoMensal) { this.consumoMensal = consumoMensal; }
         public List<LeitraConsumo> getLeituras() { return this.leituras; }

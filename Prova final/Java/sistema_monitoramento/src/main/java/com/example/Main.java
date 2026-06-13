@@ -15,7 +15,7 @@ public class Main {
         predio.listarApartamentos();
 
         // Criação de dispositivos inteligentes (Apartamento 1 -- * DispositivoInteligente)
-        DispostivoInteligente ar = new DispostivoInteligente(1, "Ar Condicionado", "LG", "DualInverter", "Climatizacao", true, 1.5, 45.0);
+        DispostivoInteligente ar = new DispostivoInteligente(1, "Ar Condicionado", "LG", "DualInverter", "Climatizacao", true, -45, 45.0);
         DispostivoInteligente geladeira = new DispostivoInteligente(2, "Geladeira", "Brastemp", "FrostFree", "Eletrodomestico", true, 0.8, 60.0);
 
         apto101.adicionarDispositivo(ar);
@@ -39,7 +39,7 @@ public class Main {
         morador.consultarHistorico();
 
         // UC07 - Gerenciar alertas (limite de 1.0 kWh)
-        Alerta alerta = new Alerta(1, 1.0, true);
+        Alerta alerta = new Alerta(1, 0, true);
         morador.gerenciarAlerta(alerta);
 
         // UC12 - Enviar alerta (extend de UC07, disparado se consumo > limite)

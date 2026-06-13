@@ -20,7 +20,7 @@ public class Alerta {
 
     public Alerta(int id, double limiteConsumo, boolean ativo) {
         this.id = id;
-        this.limiteConsumo = limiteConsumo;
+        this.setLimiteConsumo(limiteConsumo);
         this.aitvo = ativo;
     }
 
@@ -32,7 +32,20 @@ public class Alerta {
     public int getId() { return this.id; }
     public void setId(int id) { this.id = id; }
     public double getLimiteConsumo() { return this.limiteConsumo; }
-    public void setLimiteConsumo(double limiteConsumo) { this.limiteConsumo = limiteConsumo; }
+    
+// Implementação do setter com tratamento de exceção (Try / Catch)
+    public void setLimiteConsumo(double limiteConsumo) {
+        try {
+            if (limiteConsumo <= 0) {
+                throw new IllegalArgumentException("O limite de consumo deve ser maior que zero.");
+            }
+            this.limiteConsumo = limiteConsumo;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+            this.limiteConsumo = 0;
+        }
+    }
+
     public boolean isAtivo() { return this.aitvo; }
     public void setAtivo(boolean ativo) { this.aitvo = ativo; }
     public List<Notificacao> getNotificacoes() { return this.notificacoes; }
