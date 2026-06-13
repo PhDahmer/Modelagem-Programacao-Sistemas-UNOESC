@@ -1,11 +1,22 @@
 package com.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MoradorC extends Usuario implements Login {
     
     private Predio predio;
     private Apartamento apartamento;
+    private List<Alerta> alertas = new ArrayList<>();
 
 // construtores
+    public MoradorC(int id, String nome, String user, String senhaHash, Predio predio, Apartamento apartamento, List<Alerta> alertas) {
+        super(id, nome, user, senhaHash);
+        this.predio = predio;
+        this.apartamento = apartamento;
+        this.alertas = alertas;
+    }
+
     public MoradorC(int id, String nome, String user, String senhaHash, Predio predio, Apartamento apartamento) {
         super(id, nome, user, senhaHash);
         this.predio = predio;
@@ -36,23 +47,30 @@ public class MoradorC extends Usuario implements Login {
     }
 
 // Outros métodos específicos de MoradorC
+    
     public void visualizarConsumo() {
-        // fazer codigo apos definir como o consumo é armazenado e calculado
         System.out.println("Visualizando consumo para " + this.getNome());
+        for (DispostivoInteligente d : this.apartamento.listarDispositivos()) {
+            System.out.println(" - " + d.getNome() + ": " + d.obterConsumo() + " kWh");
+        }
     }
 
     public void consultarHistorico() {
-        // fazer codigo apos definir como o histórico é armazenado
         System.out.println("Consultando histórico para " + this.getNome());
+        for (DispostivoInteligente d : this.apartamento.listarDispositivos()) {
+            for (LeitraConsumo l : d.getLeituras()) {
+                System.out.println(" - " + d.getNome() + ": " + l.getValor() + " kWh em " + l.getDataHora());
+            }
+        }
     }
 
-    public void gerenciarAlerta() {
-        // fazer codigo apos definir como as alertas são gerenciadas
+    public void gerenciarAlerta(Alerta alerta) {
+        this.alertas.add(alerta);
         System.out.println("Gerenciando alertas para " + this.getNome());
     }
 
-    public void gerenciarDispositivos() {
-        // fazer codigo apos definir como os dispositivos são gerenciados
+    public void gerenciarDispositivos(DispostivoInteligente dispositivo) {
+        this.apartamento.adicionarDispositivo(dispositivo);
         System.out.println("Gerenciando dispositivos para " + this.getNome());
     }
     

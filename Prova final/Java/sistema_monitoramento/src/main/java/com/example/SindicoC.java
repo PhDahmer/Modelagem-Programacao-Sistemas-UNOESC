@@ -1,8 +1,14 @@
 package com.example;
 
+import java.util.List;
+
 public class SindicoC extends MoradorC implements Login {
 
     // construtores
+    public SindicoC(int id, String nome, String user, String senhaHash, Predio predio, Apartamento apartamento, List<Alerta> alertas) {
+        super(id, nome, user, senhaHash, predio, apartamento, alertas);
+    }
+
     public SindicoC(int id, String nome, String user, String senhaHash, Predio predio, Apartamento apartamento) {
         super(id, nome, user, senhaHash, predio, apartamento);
     }
@@ -24,25 +30,35 @@ public class SindicoC extends MoradorC implements Login {
     }
 
     // Outros métodos específicos de SindicoC
-        public void gerenciarPredios() {
-        // fazer codigo apos definir como os prédios são gerenciados
+    public void gerenciarPredios() {
         System.out.println("Gerenciando prédios para " + this.getNome());
-        }
+        this.getPredio().listarApartamentos();
+    }
 
     public void gerenciarMoradores() {
-        // fazer codigo apos definir como os moradores são gerenciados
         System.out.println("Gerenciando moradores para " + this.getNome());
-    }   
+        // OBS: o sistema atual não possui uma lista de moradores em Predio/SindicoC.
+        // Conforme estrutura existente, fica apenas o registro do acesso.
+    }
 
     public void gerenciarApartamentos() {
-        // fazer codigo apos definir como os apartamentos são gerenciados
         System.out.println("Gerenciando apartamentos para " + this.getNome());
+        for (Apartamento a : this.getPredio().getApartamentos()) {
+            System.out.println(" - Apto " + a.getNumero() + " (andar " + a.getAndar() + ")");
+        }
     }
 
     public void consultarConsumoGeral() {
-        // fazer codigo apos definir como o consumo geral é consultado
         System.out.println("Consultando consumo geral para " + this.getNome());
+        double total = 0;
+        for (Apartamento a : this.getPredio().getApartamentos()) {
+            for (DispostivoInteligente d : a.listarDispositivos()) {
+                total += d.obterConsumo();
+            }
+        }
+        System.out.println("Consumo total do prédio: " + total + " kWh");
     }
-
-
 }
+
+
+
